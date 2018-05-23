@@ -1,0 +1,119 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~bootstrap/dist/css/bootstrap.css";
+/* import material icon offline*/
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  /*src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    /*url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),*/
+    url(css/Material+Icons_400_normal.woff) format('woff'),
+    url(css/Material+Icons_400_normal.ttf) format('truetype');
+}
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.demo-app-header {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  
+}
+
+.demo-app-container,
+.demo-app-sidenav {
+  position: absolute;
+  padding-top: 64px;
+
+}
+.toolbar-seprator {
+  flex: 1 1 auto;
+}
+body{	
+	font-family: 'Roboto', sans-serif;
+	margin:0px !important;
+}
+ 
+.app-header{
+	color: #fff;
+  text-align: center;
+   padding: 1%;
+	-webkit-box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+	-moz-box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+	box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+}
+ 
+.login-container{
+	width: 100%;
+  	height:400px;
+  	padding: 0% !important;
+	background-color: #fff;
+	-webkit-box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+	-moz-box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+	box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+}
+ 
+.login-box-header{
+	width: auto;
+    height: 20%;
+    background-color: #55a6f1;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 2em;
+    padding: 2%;
+    color: #fff;
+}
+ 
+.login-box-body{
+	width: auto;
+	height:100%;
+	padding: 5% 5% 5% 5%;
+	color: #55a6f1;
+}
+ 
+.login-icon{
+	margin-top: -2px;
+}
+ 
+.justifier {
+	width: 100%;
+	padding-bottom: 2%;
+}
+ 
+.login-button{
+	width: 100%;
+	padding:1.5% !important;	
+    background-color: #55a6f1;
+    font-size: 1.5em;
+    color: #fff !important;
+}
+.login-box-body-inside{
+  background-color: #55a6f1;
+
+}
+

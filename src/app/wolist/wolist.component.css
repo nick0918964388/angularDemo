@@ -1,0 +1,29 @@
+.mat-column-wolo9 {
+  max-width: 200px;
+}
+
+.mat-header-cell.mat-column-wolo9 {
+  color: red;
+  font-weight: bold;
+}
+
+.mat-cell.mat-column-wolo9 {
+  font-weight: bold;
+}
+.example-card {
+  max-width: 100%;
+  /*width:70%;*/
+ 
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+.demo-tab-group {
+  border: 1px solid #e8e8e8;
+}
+
+.demo-tab-content {
+  padding: 16px;
+}

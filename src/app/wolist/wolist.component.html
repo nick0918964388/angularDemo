@@ -1,0 +1,99 @@
+<mat-card class="example-card">
+    <mat-card-header>
+
+    </mat-card-header>
+    <!--<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">-->
+    <mat-card-content>
+        <mat-tab-group class="demo-tab-group">
+            <mat-tab label="本日工單">
+                <div class="demo-tab-content">
+
+
+
+                    <!--
+        <div class="example-container mat-elevation-z8">
+          <div class="example-loading-shade"
+               *ngIf="isLoadingResults || isRateLimitReached">
+            <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+            <div class="example-rate-limit-reached" *ngIf="isRateLimitReached">
+              GitHub's API rate limit has been reached. It will be reset in one minute.
+            </div>
+          </div>-->
+                    <alert></alert>
+                    <mat-paginator #paginator [length]="totalCount" [pageIndex]="0" [pageSize]="10" [pageSizeOptions]="[5, 10]">
+                    </mat-paginator>
+
+                    <mat-form-field>
+                        <input matInput #filter placeholder="搜尋系統工程師">
+                    </mat-form-field>
+                    <mat-table [dataSource]="wolistDataSource" matSort #sortTable="matSort">
+                        <!--(matSortChange)="changeSort($event)"-->
+                        <ng-container matColumnDef="wolo9">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header arrowPosition="after">工單編號</mat-header-cell>
+                            <!--mat-sort-header="wolo9" arrowPosition="after" start="desc" disableClear="true" -->
+                            <mat-cell *matCellDef="let row">
+                                <a [routerLink]="['../womain/1962']">{{ row.wolo9 }}</a>
+                            </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="wonum">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header arrowPosition="after">工單編號(系統)</mat-header-cell>
+                            <mat-cell *matCellDef="let row">{{ row.wonum }}</mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="siteid">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header arrowPosition="after">廠區</mat-header-cell>
+                            <mat-cell *matCellDef="let row">{{ row.siteid }}</mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="assetnum">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header arrowPosition="after">資產</mat-header-cell>
+                            <mat-cell *matCellDef="let row">{{ row.assetnum }}</mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="route">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header arrowPosition="after">設備群組</mat-header-cell>
+                            <mat-cell *matCellDef="let row">{{ row.route }}</mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="lead">
+                            <mat-header-cell *matHeaderCellDef>系統工程師</mat-header-cell>
+                            <mat-cell *matCellDef="let row">{{ row.lead }}</mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="owner">
+                            <mat-header-cell *matHeaderCellDef>保養工程師</mat-header-cell>
+                            <mat-cell *matCellDef="let row">{{ row.owner }}</mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="status">
+                            <mat-header-cell *matHeaderCellDef>狀態</mat-header-cell>
+                            <mat-cell *matCellDef="let row">{{ row.status }}</mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="schedstart">
+                            <mat-header-cell *matHeaderCellDef>計畫開始時間</mat-header-cell>
+                            <mat-cell *matCellDef="let row">{{ row.schedstart }}</mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="schedstart">
+                                <mat-header-cell *matHeaderCellDef>計畫開始時間</mat-header-cell>
+                                <mat-cell *matCellDef="let row">{{ row.schedstart }}</mat-cell>
+                            </ng-container>
+
+                        <mat-header-row *matHeaderRowDef="['wolo9','wonum','siteid','assetnum','route','lead','owner','status','schedstart',ownerperson.displayname]"></mat-header-row>
+                        <mat-row *matRowDef="let emailRow; columns: ['wolo9','wonum','siteid','assetnum','route','lead','owner','status','schedstart','ownerperson.displayname']"></mat-row>
+                    </mat-table>
+
+
+                </div>
+            </mat-tab>
+            <mat-tab label="本週工單">
+                <div class="demo-tab-content">
+                </div>
+            </mat-tab>
+            <mat-tab label="本月工單">
+                <div class="demo-tab-content">
+                </div>
+            </mat-tab>
+
+        </mat-tab-group>
+        <router-outlet></router-outlet>
+    </mat-card-content>
+    <!--
+    <mat-card-actions>
+        <button mat-button>回到清單</button>
+
+    </mat-card-actions>-->
+</mat-card>

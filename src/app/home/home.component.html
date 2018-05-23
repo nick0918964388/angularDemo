@@ -1,0 +1,50 @@
+<!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+
+<mat-toolbar class="demo-app-header" color="primary">
+    <button mat-icon-button (click)="sideNav.toggle()">
+        <mat-icon>{{ sideNav.opened ? 'menu' : 'menu' }}</mat-icon>
+    </button>
+    <span>Maximo Mobile App Demo</span>
+    <!-- 在這之後的都會被推到右邊去 -->
+    <span class="toolbar-seprator"></span>
+    <button mat-icon-button [matMenuTriggerFor]="profileMenu" #menuTrigger="matMenuTrigger">
+        <mat-icon>person</mat-icon>
+    </button>
+    <!--右上角的按鈕設計-->
+    <button mat-icon-button [matMenuTriggerFor]="messageMenu" #menuTrigger="matMenuTrigger">
+        <mat-icon>message</mat-icon>
+    </button>
+    <button mat-icon-button (click)="onlogout()">
+        <mat-icon>exit_to_app</mat-icon>
+    </button>
+</mat-toolbar>
+<mat-sidenav-container fullscreen>
+    <mat-sidenav opened="false" mode="push" fixedInViewport="true" #sideNav class="demo-app-sidenav">
+        <mat-nav-list>
+            <a [routerLink]="['wolist']" mat-list-item>工單清單</a>
+            <a [routerLink]="['woplan']" mat-list-item>設備查詢</a>
+            <a [routerLink]="['dashboard', 'blog']" mat-list-item>物料查詢</a>
+            <a [routerLink]="['dashboard', 'inbox']" mat-list-item>收件夾</a>
+            <a [routerLink]="['wowf']" mat-list-item>工單核簽頁面</a>
+
+            <mat-divider></mat-divider>
+            <!-- 另外一組選單 -->
+            <h3 matSubheader>其他頁面</h3>
+            <a [routerLink]="['/']" mat-list-item>回首頁</a>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="demo-app-container">
+        <router-outlet></router-outlet>
+
+
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<mat-menu #messageMenu="matMenu">
+    <button mat-menu-item>最新訊息</button>
+    <button mat-menu-item>訊息設定</button>
+</mat-menu>
+<mat-menu #profileMenu="matMenu">
+    <button mat-menu-item>人員資訊</button>
+</mat-menu>
